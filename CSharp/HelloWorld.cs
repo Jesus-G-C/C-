@@ -57,6 +57,95 @@ namespace CSharpHelloWorld
             Console.WriteLine(MyConst);
 
             // Estructuras
+
+            var myArray = new string[] { "Jesús", "Gaspar", "Yisus" };
+            Console.WriteLine(myArray[0]);
+
+            myArray[2] = "23"; // No se puede agregar más espacios al array ya que esta definido con cierto tamaño
+            Console.WriteLine(myArray[1]); // Solo se puede agregar cadenas a este array ya que asi fue definido
+
+            var myDictionay = new Dictionary<string, int>
+            {
+                {"jesus", 23},
+                {"jordana", 23}
+            };
+            Console.WriteLine(myDictionay["jesus"]);
+
+            var mySet = new HashSet<string> { "Jesús", "Gaspar", "Yisus", "Jesús", "Jesús", "Jesús" }; // Se crea obviando los repetidos
+
+            var myTouple = ("Jesús", "Gaspar", "Yisus");
+            Console.WriteLine(myTouple); // No se accede a nivel index (myTouple[0])
+
+            // Bucles
+
+            for (int index = 0; index < 10; index++)
+            {
+                Console.WriteLine(index);
+            }
+
+            foreach (var myItem in myArray)
+            {
+                Console.WriteLine(myItem);
+            }
+
+            foreach (var myItem in myDictionay)
+            {
+                Console.WriteLine(myItem);
+            }
+
+            foreach (var myItem in mySet)
+            {
+                Console.WriteLine(myItem);
+            }
+
+            // Flujos
+
+            myInt = 12;
+
+            if (myInt == 11 && myBool == true)
+            {
+                Console.WriteLine("El valor es 11");
+            }
+            else if (myInt == 12 || myBool == false)
+            {
+                Console.WriteLine("El valor es 12");
+            }
+            else
+            {
+                Console.WriteLine("El valor no es 11 ni 12");
+            }
+
+
+            // Funciones
+
+            MyFunction();
+            Console.WriteLine(MyFunctionWithReturn(5));
+
+            // Clases
+
+            var myClass = new MyClass("Jesús");
+            myClass.myName = "Emiliano";
+            Console.WriteLine(myClass.myName);
+        }
+
+        static void MyFunction()
+        {
+            Console.WriteLine("Mi función");
+        }
+
+        static int MyFunctionWithReturn(int param)
+        {
+            return 10 + param;
+        }
+
+        class MyClass
+        {
+            public string myName { get; set; }
+
+             public MyClass(string myName)
+            {
+                this.myName = myName;
+            }
         }
     }
 }
